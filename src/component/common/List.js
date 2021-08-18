@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 import '../common/Styles.css';
 
 function List(props) {
@@ -11,14 +12,20 @@ function List(props) {
     let average = props.ListAsset.average
     let pic = props.ListAsset.pic
     return (
-        <div>
-            <img src={pic} alt="Picture" width="500" height="600"/> 
-            <h2>{name}</h2>
-            <p>Email: {email}</p>
-            <p>Company: {company}</p>
-            <p>Skill: {skill}</p>
-            <p>Average: {average} %</p>
-        </div>
+        <React.Fragment>
+            <Row>
+                <Col>
+                    <img src={pic} alt="Picture" width="500" height="600"/> 
+                </Col>
+                <Col>
+                    <h2>{name}</h2>
+                    <p>Email: {email}</p>
+                    <p>Company: {company}</p>
+                    <p>Skill: {skill}</p>
+                    <p>Average: {average} %</p>
+                </Col>
+            </Row>
+        </React.Fragment>
     )
 }
 export default List;
